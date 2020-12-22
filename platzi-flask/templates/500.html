@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ super() }}
+    500 INTERNAL SERVER ERROR
+{% endblock %}
+
+{% block content %}
+    <H1>There's something wrong and it's not your fault...</H1>
+    <img src="https://http.cat/500" alt="" class="error_cat">
+{% endblock %}
