@@ -1,20 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Flask!</title>
-  </head>
-  <body>
+{% extends 'base.html' %}
+{% import 'macros.html' as macros %}
+
+{% block title %}
+    {{ super() }}
+    Bienvenida
+{% endblock %}
+
+{% block content %}
     {% if user_ip %}
-    <h1>Hello World my dear user your IP is {{ user_ip }}</h1>
+        <h1>Hello World my dear user your IP is {{ user_ip }}</h1>
     {% else %}
-    <a href="{{ url_for('index') }}">Go to index page</a>
+        <a href="{{ url_for('index') }}">Go to index page</a>
     {% endif %}
+
     <ul>
-      {% for todo in todos %}
-      <li>{{todo}}</li>
-      {% endfor %}
+        {% for todo in todos %}
+            {{ macros.render_todo(todo) }}
+        {% endfor %}
     </ul>
-  </body>
-</html>
+{% endblock %}
+
