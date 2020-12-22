@@ -6,6 +6,15 @@
     <title>Hello Flask!</title>
   </head>
   <body>
+    {% if user_ip %}
     <h1>Hello World my dear user your IP is {{ user_ip }}</h1>
+    {% else %}
+    <a href="{{ url_for('index') }}">Go to index page</a>
+    {% endif %}
+    <ul>
+      {% for todo in todos %}
+      <li>{{todo}}</li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
