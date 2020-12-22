@@ -1,7 +1,22 @@
-<nav>
+<!-- <nav>
   <ul>
-    <img src="{{ url_for('static', filename='../static/images/platzi.png') }}" alt="Platzi logo">
+    <img src="{{ url_for('static', filename='../static/images/platzi.png') }}" class="platzi-logo" alt="Platzi logo">
     <li><a href="{{ url_for('index') }}">Ir a inicio</a></li>
     <li><a href="https://platzi.com" target="_blank">Ir a Platzi</a></li>
   </ul>
+</nav> -->
+
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="{{ url_for('static', filename='../static/images/platzi.png') }}" width="30" height="30" class="d-inline-block align-top" alt="Platzi logo" loading="lazy">
+    Platzi
+  </a>
+  <div class="collapse navbar-collapse" id="navbarNav"></div>
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+    </ul>
+  </div>
 </nav>

@@ -1,6 +1,9 @@
 from flask import Flask, request, make_response, redirect, render_template
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__, template_folder='./templates')
+bootsrap = Bootstrap(app)
+
 
 todos = ['Buy coffee', 'Deliver purchase order', 'Send video to producer']
 

@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% extends 'bootstrap/base.html' %}
+
+{% block khead %}
+    {{ super() }}
+    <title>
+        {% block title %}Flask Platzi | {% endblock %}
+    </title>
     <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/main.css') }}">
-    <title>{% block title %} Flask Platzi | {% endblock %}</title>
-  </head>
-  <body>
-    <header>
+
+{% endblock %}
+
+
+{% block body %}
+    {% block navbar %}
         {% include 'navbar.html' %}
-    </header>
+    {% endblock %}
     {% block content %}
     {% endblock %}
-  </body>
-</html>
+{% endblock %}
